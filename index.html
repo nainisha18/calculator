@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A sleek, responsive calculator for basic arithmetic.">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <section class="calculator" aria-label="Calculator">
+            <header class="calculator-header">
+                <div>
+                    <p class="eyebrow">EVERYDAY TOOLS</p>
+                    <h1>Calculator</h1>
+                </div>
+                <span class="status-dot" aria-label="Ready"></span>
+            </header>
+
+            <div class="display" aria-live="polite" aria-atomic="true">
+                <p class="expression" id="expression">Ready to calculate</p>
+                <output class="result" id="display" aria-label="Calculator display">0</output>
+            </div>
+
+            <div class="keypad" id="keypad">
+                <button class="key key-utility" data-action="clear" type="button">AC</button>
+                <button class="key key-utility" data-action="delete" type="button" aria-label="Delete last digit">DEL</button>
+                <button class="key key-operator" data-operator="%" type="button" aria-label="Remainder">%</button>
+                <button class="key key-operator" data-operator="/" type="button" aria-label="Divide">÷</button>
+
+                <button class="key" data-number="7" type="button">7</button>
+                <button class="key" data-number="8" type="button">8</button>
+                <button class="key" data-number="9" type="button">9</button>
+                <button class="key key-operator" data-operator="*" type="button" aria-label="Multiply">×</button>
+
+                <button class="key" data-number="4" type="button">4</button>
+                <button class="key" data-number="5" type="button">5</button>
+                <button class="key" data-number="6" type="button">6</button>
+                <button class="key key-operator" data-operator="-" type="button" aria-label="Subtract">−</button>
+
+                <button class="key" data-number="1" type="button">1</button>
+                <button class="key" data-number="2" type="button">2</button>
+                <button class="key" data-number="3" type="button">3</button>
+                <button class="key key-operator" data-operator="+" type="button" aria-label="Add">+</button>
+
+                <button class="key key-utility" data-action="sign" type="button" aria-label="Change sign">+/−</button>
+                <button class="key" data-number="0" type="button">0</button>
+                <button class="key" data-action="decimal" type="button">.</button>
+                <button class="key key-equals" data-action="equals" type="button" aria-label="Equals">=</button>
+            </div>
+
+            <footer class="calculator-footer">
+                <span><span class="footer-indicator"></span> ALL SYSTEMS READY</span>
+                <span>HTML · CSS · JS</span>
+            </footer>
+        </section>
+        <p class="page-note">Simple tools. Clear thinking.</p>
+    </main>
+</body>
+</html>

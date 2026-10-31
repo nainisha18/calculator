@@ -1,0 +1,181 @@
+:root {
+    color-scheme: dark;
+    --page: #0b0d12;
+    --panel: #151922;
+    --panel-edge: #252b38;
+    --display: #10141c;
+    --text: #f4f6fb;
+    --muted: #8992a3;
+    --key: #202633;
+    --key-hover: #2c3444;
+    --accent: #a8f06a;
+    --accent-dark: #192512;
+    --operator: #252b3a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(91, 115, 157, 0.13), transparent 48%),
+        var(--page);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    padding: 28px 16px;
+}
+
+button { font: inherit; }
+
+.app { width: min(100%, 390px); }
+
+.calculator {
+    padding: 24px;
+    border: 1px solid var(--panel-edge);
+    border-radius: 28px;
+    background: linear-gradient(145deg, #191e29, var(--panel) 48%, #12161e);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.035);
+}
+
+.calculator-header, .calculator-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eyebrow {
+    margin: 0 0 7px;
+    color: var(--accent);
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.55rem;
+    font-weight: 650;
+    letter-spacing: -0.045em;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 16px rgba(168, 240, 106, 0.65);
+}
+
+.display {
+    min-height: 130px;
+    margin: 24px 0 18px;
+    padding: 18px 16px;
+    border: 1px solid #222936;
+    border-radius: 18px;
+    background: var(--display);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.expression {
+    width: 100%;
+    min-height: 1.2em;
+    margin: 0 0 10px;
+    color: var(--muted);
+    text-align: right;
+    font-size: 0.82rem;
+    overflow-wrap: anywhere;
+}
+
+.result {
+    display: block;
+    max-width: 100%;
+    color: var(--text);
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    font-weight: 550;
+    letter-spacing: -0.06em;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.key {
+    min-width: 0;
+    min-height: 58px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background: var(--key);
+    color: var(--text);
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 140ms ease, transform 140ms ease, border-color 140ms ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.key:hover { background: var(--key-hover); }
+.key:active { transform: scale(0.96); }
+.key:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.key-utility { color: #c1c8d6; background: #252b37; }
+.key-operator { color: var(--accent); background: var(--operator); }
+.key-operator:hover { background: #30384a; }
+
+.key-equals {
+    color: #11170d;
+    background: var(--accent);
+    font-size: 1.45rem;
+    box-shadow: 0 5px 18px rgba(168, 240, 106, 0.12);
+}
+.key-equals:hover { background: #bbff83; }
+
+.calculator-footer {
+    gap: 12px;
+    margin-top: 21px;
+    color: var(--muted);
+    font-size: 0.61rem;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+}
+
+.calculator-footer > span:first-child {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.footer-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.page-note {
+    margin: 18px 0 0;
+    color: #646d7e;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.025em;
+}
+
+@media (max-width: 360px) {
+    .calculator { padding: 17px; border-radius: 23px; }
+    .keypad { gap: 7px; }
+    .key { min-height: 53px; border-radius: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
